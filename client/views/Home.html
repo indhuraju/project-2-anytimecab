@@ -1,0 +1,302 @@
+
+<style>
+#regContainer{
+    margin-top: 3%;  
+}
+
+.panel-login {
+    border-color: #ccc;
+     background-color: #f9f8f8;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+    text-align:center;
+}
+.panel-login>.panel-heading a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 28px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+    font-size: 34px;
+}
+.panel-login>.panel-heading hr{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    clear: both;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+    background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+    height: 45px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+    outline:none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #ccc;
+}
+.btn-login {
+    background-color:#3D9DB3;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #2d92a9;
+}
+.btn-login:hover,
+.btn-login:focus {
+    color: #fff;
+    background-color: #198da8;
+    border-color: #53A3CD;
+}
+.btn-register {
+    background-color: #17ae47;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    height: auto;
+    font-weight: normal;
+    padding: 14px 0;
+    text-transform: uppercase;
+    border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+    color: #fff;
+    background-color: #1CA347;
+    border-color: #1CA347;
+}
+
+
+.panel-heading a{
+    font-size: 48px;
+    color: rgb(6, 106, 117);
+    padding: 2px 0 10px 0;
+    font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.panel-heading a{
+    background: -webkit-repeating-linear-gradient(-45deg, 
+    rgb(18, 83, 93) , 
+    rgb(18, 83, 93) 20px, 
+    rgb(64, 111, 118) 20px, 
+    rgb(64, 111, 118) 40px, 
+    rgb(18, 83, 93) 40px);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:400,100,300,600,100italic,300italic,400italic,600italic,700,700italic);
+
+.dad {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+}
+
+.dad > .son-1 {
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    -moz-transition: all 5s;
+    -webkit-transition: all 5s;
+    transition: all 5s;
+    -moz-transform: scale(1,1);
+    -webkit-transform: scale(1,1);
+    transform: scale(1,1);
+    background-image: url("../public/images/clent.jpg");
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    z-index: -1;
+}
+
+.dad:hover > .son-1 {
+    -moz-transform: scale(2,2);
+    -webkit-transform: scale(2,2);
+    transform: scale(2,2);    
+}
+
+.son-text {
+    color: #fcfcfc;
+  font-size: 2em;
+  font-family: 'Josefin Slab', serif;
+  text-align: center;
+  width: 100%;
+  height: 600px;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  padding-top: 15vh;
+}
+
+.son-text:hover {
+  background-color: #22313F;
+  opacity: 0.7;
+}
+
+.son-span {
+  background: #fcfcfc;
+  color: #22313F;
+  padding: 15px 45px;
+  font-family: 'Josefin Slab', serif;
+  font-style: italic;
+}
+
+
+</style>
+<script>
+$(function() {
+
+    $('#login-form-link').click(function(e) {
+        $("#login-form").delay(100).fadeIn(100);
+        $("#register-form").fadeOut(100);
+        $('#register-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+    $('#register-form-link').click(function(e) {
+        $("#register-form").delay(100).fadeIn(100);
+        $("#login-form").fadeOut(100);
+        $('#login-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+    });
+
+});
+</script>
+      
+<div style="display:none;">
+   <div id="latitude"></div>
+<div id="longitude"></div>
+</div>
+<div id="myMap" style="width: 600px; height: 600px; display:none;">
+</div>
+
+<div class="container dad">
+  <div class="son-1">
+  </div>
+           <div class="row">
+                <div class="col-lg-12  text-center">
+                    <br><br><br><br><br><br>
+                    <div id="fullscreen_bg" class="fullscreen_bg"/>
+<div id="regContainer" class="container">
+      <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-login" style="    margin-top: -175px;">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-6">
+                <a href="#" class="active" id="login-form-link">Login</a>
+              </div>
+             
+            </div>
+            <hr>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+               
+                 <form name="myform" id="login-form" method="post" action="abc.jsp" onsubmit="return validateform()">
+                 Email: <input type="text" placeholder="Email" name="@gmail.com" ng-model="User.Email" class="form-control" required/>
+               Password: <input type="password" placeholder="Password" ng-model="User.Password" class="form-control" required/>
+                  <div class="form-group">
+                    <div class="row">
+                     <a href="" class="btn btn-success" ng-click="LoginUser()" ng-disabled="disabled" style="margin-top: 20px" >Login</a>
+                       <button class="btn btn-warning" style="margin-top: 20px">Cancel</button>
+                    </div>
+                  </div>
+                </form>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+         
+  <div class="row" style="margin-top: -75px;">
+        <div class="profile-header-container">   
+        <div class="profile-header-img">
+              
+ 
+                <div class="rank-label-container">
+                  
+                </div>
+            </div>
+        </div> 
+  </div>
+</div>
+</div>
+      
+  
+        </div>   
+                  
+
+                </div>
+            </div>
+        </div>
+        
+ 
+
+<div class="container-fluid" style="background-color: #F0F2F2"><br/>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel" style="text-align: center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Special Offer</h3>
+                    </div>
+                    <img src="../public/images/offer.png" width="51%" />
+                  
+                    
+                    <button type="button" class="btn btn-block btn-warning">Available Offer</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel" style="text-align: center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">24/7 Service</h3>
+                    </div>
+                    <img src="../public/images/247.png" width="64%" />
+                    <button type="button" class="btn btn-block btn-warning">Services</button>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="panel" style="text-align: center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Contact Us</h3>
+                    </div>
+                    <img src="../public/images/Contact-us.jpg" width="64%" />
+                    <button type="button" class="btn btn-block btn-warning">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

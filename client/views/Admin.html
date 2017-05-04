@@ -1,0 +1,193 @@
+<li><a href="/" class="btn" ng-click="LogoutUser()" style="margin-top: -1px;margin-left: 1200px;">Logout</a></li>
+
+<head>
+
+<style>
+.panel-body .btn:not(.btn-block) { width:320px;margin-bottom:10px; }
+.align
+{
+        margin-left: 14%;
+    margin-top: 2%;
+}
+.panel-title
+{
+        margin-left: 38%;
+}
+.mybtn
+       {
+        background-color: #222;
+        color: white;
+        }
+        .tablestyle
+{
+  border-style: hidden;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container" style=" margin-top: -300px; margin-left: 230px;">
+    <div class="row">
+      <div class="col-md-1"></div>
+
+        <div class="col-md-10">
+            
+                <div class="panel-heading">
+                    <h3 class="panel-title" style="margin-left: 300px;margin-top: 60px;">
+
+                        Welcome To Admin</h3>
+                </div>
+                <div class="panel-body align" >
+                    <div class="row">
+                        <div >
+                          <a data-toggle="modal" data-target="#myModal" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-plus"></span> <br/>Add Car Type</a>
+                          <a data-toggle="modal" data-target="#myModal2" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-plus"></span> <br/>Add Driver</a>
+                          
+                         
+                    
+                </div>
+            </div>  <div class="col-md-1"></div>
+
+        </div>
+    </div>
+</body>
+
+  <div class="modal fade" id="myModal" role="dialog" >
+    <div class="modal-dialog modal-lg" style="width:100%;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Car Type</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form" name="myFormTH" ng-submit="addType()">
+ <table>
+     <tr>
+    <th style="padding:20px">Car Type</th>
+    <th style="padding:20px">Normal Hour Rate</th>
+    <th style="padding:20px">Peak Hour Rate</th>
+  <th style="padding:20px">Start Peak Time</th>
+   <th style="padding:20px">End Peak Time</th>
+   
+    </tr>
+          <tr>                                                       
+ <td style="padding:20px">
+          <input type="text" class="form-control"  ng-model="types.CarTp" minlength="2" required>
+    </td>
+    
+
+     <td style="padding:20px">
+    <input type="text" class="form-control"   ng-model="types.NormalHourRate" required></td>
+    <td style="padding:20px">
+      <input type="text" class="form-control"    ng-model="types.PeakHourRate" minlength="1" required>
+    </td>
+     <td style="padding:20px">
+
+      <input id="time1" type="time" class="form-control"   ng-model="types.StartPeakTime" minlength="1" required>
+    </td>
+       <td style="padding:20px">
+      <input id="time2" type="time" class="form-control"   ng-model="types.EndPeakTime" minlength="1" required>
+    </td>
+<td><button  ng-disabled="myFormTH.$invalid" type="submit" ng-click="addType()" class="btn btn-outlined btn-success">Add Car</button>
+ 
+</td>
+<td>
+<button type="button" ng-click="updateType()" class="btn btn-outlined btn-warning">Update</button></td></tr></form>
+
+    <table class="table" style="margin-top: 17px;">
+      <tr ng-repeat="type in typeslist">
+      <td >{{type.CarTp}}</td>
+       <td >{{type.NormalHourRate}}</td>
+      <td>{{type.PeakHourRate}}</td>
+      <td>{{type.StartPeakTime}}</td>
+      <td>{{type.EndPeakTime}}</td>
+      
+
+<td><button type="button" ng-click="removeType(type)" class="btn btn-outlined btn-danger">Remove</button></td>
+<td><button  type="button" ng-click="editType(type)" class="btn btn-outlined btn-primary">Edit</button></td>
+</tr>
+</tbody>
+</table>
+          
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="modal fade" id="myModal2" role="dialog" >
+    <div class="modal-dialog modal-lg" style="width:1080px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add Driver</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form" name="myFormTH" ng-submit="addType()">
+       <table class="table table-filter ">
+                 <thead>
+                 <tbody>
+                     <th>Driver Name</th>
+                     <th>Mobile Number</th>
+                     <th>License Number</th>
+                     <th>Password</th>
+                     <th>Email ID</th>
+                    <th>Car Name</th>
+                     <th>Car Type</th>
+                     <th>Car Number</th>
+
+                     </tr>
+                     </thead>
+                     <tbody>
+                     <tr>
+   <td><input type="text" class="form-control" ng-model="Drivers.FirstName" required></td>
+  <td><input type="text" class="form-control" ng-model="Drivers.MobileNumber" required></td>
+  <td><input type="text" class="form-control" ng-model="Drivers.LicenseNumber" required></td>
+   <td><input type="password" class="form-control" ng-model="Drivers.Password" required></td>
+   <td><input type="text" class="form-control" ng-model="Drivers.Email" required></td>
+  <td><input type="text" class="form-control" minlength="2"  ng-model="Drivers.carName" required ></td>
+ <td><select class="form-control" minlength="2"  ng-model="Drivers.CarType" style="width:100px;height:30px;margin-top: -1px;" required>
+   <option  ng-repeat="type in typeslist">{{type.CarTp}}</option>
+  </select></td>
+<td><input type="text" class="form-control" minlength="2" ng-model="Drivers.carNumber" required >
+</td>
+<td  style="padding:20px">
+
+<button ng-disabled="myFormTH.$invalid" ng-click="addDriver()"  type="button"  class="btn btn-success">ADD</button></td>
+<td style="padding:20px"> <button type="button" ng-click="updateDriver()" class="btn btn-primary">UPDATE</button></td>
+
+</tr>
+    <tr ng-repeat="Drivers in Driverslist">
+                                         
+            
+            <td>{{Drivers.FirstName}}</td>
+      <td>{{Drivers.MobileNumber}}</td>           
+      <td>{{Drivers.Email}}                
+      <td>{{Drivers.carName}}</td>          
+       <td>{{Drivers.CarType}}</td>              
+       <td>{{Drivers.carNumber}}</td>              
+<td><button ng-click="removeDriver(Drivers)" type="button" class="btn btn-danger">REMOVE</button></td>
+<td><button ng-click="editDriver(Drivers)" type="button" class="btn btn-primary">EDIT</button></td>
+</tr>
+</tbody>
+</table>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+     
+     
+     
+

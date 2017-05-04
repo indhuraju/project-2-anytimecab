@@ -1,0 +1,21 @@
+<div id="Container" class="container">
+
+    <div class="row" style="     margin-top: 45px;
+    margin-left: 50px;">
+        <div class="col-lg-8">
+        <button type="button" class="btn btn-warning btn-block" >USER REGISTRATION DETAIL'S</button>
+        <!-- <form method="post"> -->
+         <form name="myform" method="post"  onsubmit="return validateform()">
+            First Name:<input placeholder="First Name" ng-model="User.FirstName" type="text" class="form-control" required>
+            Last Name:<input placeholder="Last Name" type="text" ng-model="User.LastName" class="form-control" required>
+            Email Address:<input placeholder="Email Address" ng-model="User.Email" name="@gmail.com" class="form-control" required>
+            Mobile Number: <input placeholder="Mobile Number" ng-model="User.MobileNumber" type="text" class="form-control" required>
+            Password:<input placeholder="Password" ng-model="User.Password" type="password" class="form-control" required>
+            Confirm Password:<input placeholder="Confirm Password" type="password" class="form-control" />
+            </form>
+            <a href="#/" class="btn btn-success" ng-click="RegisterUser()" type="submit" value="Submit"  style="margin-top: 20px" ng-disabled="disabled" required>Submit</a>
+            <a href="#/" type="button" class="btn btn-warning" style="margin-top: 20px">Cancel</a>
+        </div>
+    </div>
+</div>
+

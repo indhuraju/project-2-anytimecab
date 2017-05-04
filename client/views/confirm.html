@@ -1,0 +1,82 @@
+<li><a href="/" class="btn" ng-click="LogoutUser()" style="margin-top: -1px;margin-left: 1200px;">Logout</a></li>
+
+<div class="container" style="overflow:hidden;">
+    <button class="btn btn-warning btn-block" style="    width: 100%;
+    margin-top: 44px;"><h4>Booking Confirmation Detail's</h4></button>
+<!--   <a href="/" class="btn btn-success" ng-click="LogoutUser()" style="margin-top: 10px;margin-left: 49%;">LogOut</a> -->
+
+
+<div class="table-responsive">
+  <table class="table" style="width: 63%;">
+    <tr>
+      <td style="padding: 0px;"><b>BOOKING ID</b></td>
+      <td style="padding: 0px;">
+      <p>{{confirm.ID}}</p>
+    </td>
+    </tr>
+
+  <tr>
+    <td style="padding: 0px;"><b>Source</b></td>
+    <td style="padding: 0px;">
+    <p>{{confirm.PickupLocation}}</p>
+</td>
+</tr>
+<tr>
+  <td style="padding: 0px;"><b>Destination</b></td>
+  <td style="padding: 0px;">
+  <p>{{confirm.DestinationLocation}}</p>
+</td>
+</tr>
+<!-- <tr>
+  <td style="padding: 0px;"><b>Driver Name</b></td>
+  <td style="padding: 0px;">
+  <p>{{confirm.DriverName}}</p>
+</td>
+</tr> -->
+<tr>
+  <td style="padding: 0px;"><b>Type</b></td>
+  <td style="padding: 0px;">
+  <p>{{confirm.CarTp}}</p>
+</td>
+</tr>
+<tr>
+  <td style="padding: 0px;"><b>TotalAmount</b></td>
+  <td style="padding: 0px;">
+  <p> <i class="fa fa-inr"></i>{{confirm.Amount}}</p>
+</td>
+</tr>
+
+<tr>
+  <td style="padding: 0px;"><b>Pickup Date</b></td>
+  <td style="padding: 0px;">
+  <p>{{confirm.Pickdate}}</p>
+</td>
+</tr>
+
+<tr>
+  <td style="padding: 0px;"><b>Pickup Time</b></td>
+  <td style="padding: 0px;">
+  <p>{{confirm.PickTime}}</p>
+</td>
+</tr>
+
+<tr>
+  <td style="padding: 0px;"><b>Your Mobile.No</b></td>
+  <td style="padding: 0px;">
+  <p id="numb"></p>
+</td>
+</tr>
+<tr>
+  <td style="padding: 0px;"><b>Your Mail ID</b></td>
+  <td style="padding: 0px;">
+  <p id="mail"></p>
+</td>
+</tr>
+</table>
+
+<!-- <a class="btn btn-warning" ng-click="ConfirmBook()" style="margin-top: 10px;margin-left: 49%;">Confirm</a> -->
+
+
+
+</div>
+</div>

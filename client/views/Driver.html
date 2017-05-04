@@ -1,0 +1,100 @@
+<li><a href="/" class="btn" ng-click="LogoutUser()" style="margin-top: -1px;margin-left: 1200px;">Logout</a></li>
+  <button class="btn btn-warning btn-block" style="    width: 100%;
+    margin-top: 44px;"><h4>Driver Detail's</h4></button>
+<div class="container">
+<div class="row">
+<div style="display:none;">
+   <div id="latitude"></div>
+<div id="longitude"></div>
+</div>
+<div class="col-md-12">
+<div class="col-md-6">
+
+<div id="myMap" style="width:600px;height:500px;margin-left: -100px;">
+
+</div>
+</div>
+
+
+ 
+<!-- <div ng-show="NowRidecustomer" class="col-md-6" style="    margin-top: 40px;">
+<h2> Customer's Detail's</h2>
+Customer Name:<p id="customerNameContainer"></p>
+Source:<p id="customerSourceContainer"></p>
+Destination:<p id="customerDestinationContainer"></p>
+Mail:<p id="customerMailContainer"></p>
+Number:<p id="customerNoContainer"></p>
+Amount:<p id="customerAmountContainer"></p>
+ --><!-- Cartype:<div id="type"></div> -->
+<!-- <button class="btn btn-warning" ng-click="sendtoCustomer()">Accept</button>
+</div> -->
+</div>
+
+  
+</div>
+
+ <div id="my" class="modal" style="width: 50%;
+margin-top: 9%;
+margin-left: 27%;">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+  <div class="modal-header">
+  <button type="button" class="close" id="cle">&times;</button>
+          <h4 class="modal-title">Booking Details</h4>
+        </div>
+    
+     <div class="modal-body">
+   <table >
+     <tbody>
+      
+       <tr class="rowt">
+         <th class="headt">
+ Name
+         </th>
+         <td id="customerNameContainer">
+           
+         </td>
+       </tr>
+       <tr class="rowt">
+       
+         <th class="headt">
+Contact Phone
+         </th>
+         <td id="customerNoContainer">
+         </td>
+       </tr>
+        <tr class="rowt">
+     
+       <tr class="rowt">
+         <th class="headt">
+PickUp Location 
+         </th>
+         <td id="customerSourceContainer">
+           
+         </td>
+       </tr>
+       <tr class="rowt">
+         <th class="headt">
+Drop Location
+         </th>
+         <td id="customerDestinationContainer">
+           
+         </td>
+       </tr>
+       <tr class="rowt">
+         <th class="headt">
+Amount in ₹
+         </th>
+         <td id="customerAmountContainer"></td>
+       </tr>
+       
+     </tbody>
+   </table>
+   </div>
+   <div class="modal-footer">
+          <button type="button" ng-click="sendtoCustomer()" class="btn btn-success" >Accept</button>
+        </div>
+  </div>
+
+</div>
